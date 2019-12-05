@@ -7,7 +7,7 @@ class Challenge2(unittest.TestCase):
 
     def setUp(self):
         #code to startup webdriver
-        self.driver = webdriver.Chrome("../challenges/chromedriver")
+        self.driver = webdriver.Chrome("../chromedriver")
 
     def tearDown(self):
         #code to close webdriver
