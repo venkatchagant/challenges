@@ -21,21 +21,25 @@ class Challenge2(unittest.TestCase):
 
         search_button = EC.element_to_be_clickable((By.XPATH, "//button[@class='btn btn-lightblue marginleft15']"))
 
-        wait(self.driver, 40).until(search_button)
+        wait(self.driver, 100).until(search_button)
 
         #wait(self.driver, 60)
 
         self.driver.find_element_by_xpath("//button[@class='btn btn-lightblue marginleft15']").click()
 
-        element_present = EC.presence_of_element_located((By.XPATH, "//input[@class='form-control input-sm']" ))
+        element_present = EC.visibility_of_element_located((By.XPATH, "//input[@class='form-control input-sm']" ))
 
-        wait(self.driver, 20).until(element_present)
+        wait(self.driver, 200).until(element_present)
+
+        #list_of_cars = self.driver.find_element_by_xpath("//table[@id='serverSideDataTable']").text
 
         list_of_cars = self.driver.find_element_by_xpath("//table[@id='serverSideDataTable']").text
 
         #print list_of_cars
 
         self.assertIn("PORSCHE",list_of_cars)
+
+
 
 
 if __name__ == '__main__':
